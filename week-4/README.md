@@ -84,3 +84,40 @@ int main() {
 (12, 24), (18, 36), (12, 30) са пример за приятелски числа
 
 (21, 24), (112, 28), (12, 18) са пример за такива, които не са
+
+## Задача 6
+
+Балансирано число ще наричаме такова, което съдържа равен брой четни и нечетни цифри. Кодът долу намира броят на балансираните числа в интервала [a,b], но има грешки, намерете ги и ги поправете.
+
+```
+#include <iostream>
+
+bool isBalanced(int n){
+    int evenDigits, oddDigits = 0;
+    while (n > 0) {
+        if (n % 2 == 0) {
+            evenDigits++;
+        } else {
+            oddDigits++;
+        }
+        n %= 10;
+    }
+    return evenDigits == oddDigits;
+}
+
+void countBalancedNumbers(a, b) {
+    int count;
+    for (int i = a; i < b; ++i) {
+        if (isBalanced(i)) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    int a = 1000, b = 1100;
+    std::cout << countBalancedNumbers(a, b) << "\n";
+    return 0;
+}
+```
